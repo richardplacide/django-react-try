@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'graphene_django',
     'formation',
 ]
 
@@ -124,3 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+GRAPHENE = {
+    'SCHEMA': 'API_django.schema.schema'
+}

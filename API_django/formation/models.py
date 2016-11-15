@@ -7,4 +7,13 @@ class Formateur(models.Model):
 
     def __str__(self):
         return self.contact
-        
+
+class Stage(models.Model):
+    code_stage = models.CharField(max_length=10)
+    intitule = models.CharField(blank=True, max_length=100)
+    duree = models.IntegerField(blank=True, null=True)
+    formateur = models.ForeignKey('Formateur')
+    places = models.IntegerField(blank=True, null=True, default=12)
+
+    def __str__(self):
+        return self.code_stage
